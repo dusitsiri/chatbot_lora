@@ -1,6 +1,7 @@
 import os, re, json
 from datetime import datetime, date, timedelta
 from flask import Flask, request, abort
+from googletrans import Translator
 import requests
 from linebot import (
     LineBotApi, WebhookHandler
@@ -13,6 +14,7 @@ from linebot.models import (
 )
 
 app = Flask(__name__)
+translator = Translator()
 
 channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
 channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
