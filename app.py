@@ -47,12 +47,17 @@ def callback():
 
     return 'OK'
 
+def translate_text(text):
+    en_text = translator.translate(text, dest='en').text
+    return en_text
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text
+    translated = translate_text(text)
     line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=text))
+            TextSendMessage(text=translated))
     
 
 if __name__ == "__main__":
