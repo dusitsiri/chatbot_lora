@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.6
+install:
+- pip install -r requirements.txt
+script:
+- python -m unittest discover
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: 5f1e912c-f67b-4f2e-9efe-a0906bd2d72e
+  app: aqueous-eyrie-78631
