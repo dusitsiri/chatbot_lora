@@ -1,2 +1,7 @@
-requirements.txt
+.travis.yml
 
+#secret id firebase
+lorabot-firebase-adminsdk-rkp0u-5a6cea0466.json
+
+#preset
+requirements.txt
